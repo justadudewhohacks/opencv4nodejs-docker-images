@@ -2,6 +2,7 @@ FROM ubuntu:16.04
 
 ARG OPENCV_VERSION
 ARG WITH_CONTRIB
+ARG BUILD_WORLD
 
 RUN apt-get update && \
 apt-get install -y --no-install-recommends build-essential curl wget unzip cmake && \
@@ -24,6 +25,9 @@ cmake_flags="-D CMAKE_BUILD_TYPE=RELEASE \
 	-D CMAKE_INSTALL_PREFIX=/usr/local" && \
 if [ -n "$WITH_CONTRIB" ]; then \
   cmake_flags="$cmake_flags -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules"; \
+fi && \
+if [ -n "$BUILD_WORLD" ]; then \
+  cmake_flags="$cmake_flags -D BUILD_opencv_world=ON"; \
 fi && \
 echo $cmake_flags && \
 cmake $cmake_flags .. && \
