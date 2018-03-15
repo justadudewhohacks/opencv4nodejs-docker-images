@@ -1,10 +1,16 @@
 FROM ubuntu:16.04
 
 ARG OPENCV_VERSION
+ARG NODEJS_MAJOR_VERSION
 ARG WITH_CONTRIB
 
+ENV OPENCV4NODEJS_DISABLE_AUTOBUILD=1
+
 RUN apt-get update && \
-apt-get install -y --no-install-recommends build-essential curl wget unzip cmake && \
+apt-get install -y build-essential curl && \
+apt-get install -y --no-install-recommends wget unzip git python cmake && \
+curl -sL https://deb.nodesource.com/setup_${NODEJS_MAJOR_VERSION}.x | bash && \
+apt-get install -y nodejs && node -v && npm -v && \
 rm -rf /var/lib/apt/lists/* && \
 mkdir opencv && \
 cd opencv && \
@@ -33,5 +39,6 @@ sh -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf' && \
 ldconfig && \
 cd ../../../ && \
 rm -rf opencv && \
-apt-get purge -y build-essential curl wget unzip cmake && \
+npm install -g opencv4nodejs --unsafe-perm && \
+apt-get purge -y build-essential curl wget unzip git cmake && \
 apt-get autoremove -y --purge
