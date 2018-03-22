@@ -1,7 +1,7 @@
 #!/bin/bash
 tag=node$3-opencv$1
 with_contrib=""
-if [ -n "$2" ]; then
+if [ "$2" == "y" ]; then
 	tag+="-contrib";
 	with_contrib=1;
 fi;

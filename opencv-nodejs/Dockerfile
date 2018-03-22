@@ -43,7 +43,6 @@ cmake_flags="-D CMAKE_BUILD_TYPE=RELEASE \
   -D BUILD_opencv_line_descriptor=OFF \
   -D BUILD_opencv_optflow=OFF \
   -D BUILD_opencv_phase_unwrapping=OFF \
-  -D BUILD_opencv_plot=OFF \
 	-D BUILD_opencv_python3=OFF \
 	-D BUILD_opencv_python_bindings_generator=OFF \
 	-D BUILD_opencv_reg=OFF \

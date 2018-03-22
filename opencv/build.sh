@@ -1,7 +1,6 @@
 #!/bin/bash
 tag=$1
 with_contrib=""
-build_world=""
 if [ "$2" == "y" ]; then
 	tag+="-contrib";
 	with_contrib=1;
