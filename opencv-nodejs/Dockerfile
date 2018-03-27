@@ -23,6 +23,7 @@ fi && \
 mkdir opencv-${OPENCV_VERSION}/build && \
 cd opencv-${OPENCV_VERSION}/build && \
 cmake_flags="-D CMAKE_BUILD_TYPE=RELEASE \
+  -D BUILD_EXAMPLES=OFF \
 	-D BUILD_DOCS=OFF \
 	-D BUILD_TESTS=OFF \
 	-D BUILD_PERF_TESTS=OFF \
@@ -57,7 +58,6 @@ cmake_flags="-D CMAKE_BUILD_TYPE=RELEASE \
 	-D BUILD_opencv_ts=OFF \
 	-D BUILD_opencv_xobjdetect=OFF \
 	-D BUILD_opencv_xphoto=OFF \
-	-D CMAKE_BUILD_TYPE=RELEASE \
 	-D CMAKE_INSTALL_PREFIX=/usr/local" && \
 if [ -n "$WITH_CONTRIB" ]; then \
   cmake_flags="$cmake_flags -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules"; \
