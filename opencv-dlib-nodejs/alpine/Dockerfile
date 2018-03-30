@@ -2,7 +2,7 @@ ARG NODE_VERSION=9.9.0
 FROM mhart/alpine-node:${NODE_VERSION} as alpine-node-opencv-dlib
 
 ARG RUNTIME_DEPS='libpng-dev libjpeg-turbo libwebp tiff openexr jasper openblas libx11-dev zlib'
-ARG BUILD_DEPS='xz wget unzip cmake build-base python linux-headers libpng-dev libjpeg-turbo-dev libwebp-dev tiff-dev openexr-dev jasper-dev openblas-dev libx11-dev zlib-dev'
+ARG BUILD_DEPS='xz wget unzip cmake build-base python linux-headers libjpeg-turbo-dev libwebp-dev tiff-dev openexr-dev jasper-dev openblas-dev zlib-dev'
 ARG OPENCV_VERSION=3.4.1
 ARG DLIB_VERSION=19.8
 ARG LIB_PREFIX='/usr/local'

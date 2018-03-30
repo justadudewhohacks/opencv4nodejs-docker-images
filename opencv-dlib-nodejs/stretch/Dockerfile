@@ -1,7 +1,7 @@
 FROM debian:stretch as stretch-node-opencv-dlib
 
-ARG RUNTIME_DEPS='ca-certificates libpng-dev libjpeg-dev libwebp-dev libtiff5-dev libopenexr-dev libopenblas-dev libx11-6'
-ARG BUILD_DEPS='wget unzip cmake build-essential python pkg-config libx11-dev'
+ARG RUNTIME_DEPS='ca-certificates libpng-dev libjpeg-dev libwebp-dev libtiff5-dev libopenexr-dev libopenblas-dev libx11-dev'
+ARG BUILD_DEPS='wget unzip cmake build-essential python pkg-config'
 ARG ARCH='x64'
 ARG NODE_VERSION=9.9.0
 ARG OPENCV_VERSION=3.4.1
