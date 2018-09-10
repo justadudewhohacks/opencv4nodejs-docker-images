@@ -23,7 +23,7 @@ cmake_flags="-D CMAKE_BUILD_TYPE=RELEASE \
 	-D CMAKE_BUILD_TYPE=RELEASE \
 	-D CMAKE_INSTALL_PREFIX=/usr/local" && \
 if [ -n "$WITH_CONTRIB" ]; then \
-  cmake_flags="$cmake_flags -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules"; \
+  cmake_flags="$cmake_flags -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-${OPENCV_VERSION}/modules -D OPENCV_ENABLE_NONFREE=ON"; \
 fi && \
 echo $cmake_flags && \
 cmake $cmake_flags .. && \
