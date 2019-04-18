@@ -2,7 +2,7 @@ Scripts to build OpenCV + Nodejs on ubuntu 16.04. Used by opencv4nodejs CI. ([Re
 
 Usage:
 ``` bash
-./build.sh <tag>
+./build.sh <tag> <node major version>
 ```
 
 ``` bash
